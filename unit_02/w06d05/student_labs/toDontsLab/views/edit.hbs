@@ -1,0 +1,20 @@
+
+<form action="/todonts/edit" method="post">
+  <p>
+    Current Description: {{todont.description}}
+  </p>
+  <!-- recall: the label's for HAS to match the inputs name -->
+  <label for="description">New Description:</label>
+  <input type="text" name="description">
+
+  <p>
+    Current Urgency: {{todont.urgent}}
+  </p>
+  <label for="urgent">New Urgent:</label>
+  <input type="text" name="urgent">
+
+  <!-- NEED A SUBMIT BUTTON -->
+  <br>
+  <button type="submit" name="button">Submit</button>
+
+</form>

@@ -1,0 +1,19 @@
+<!-- lets put the description of the specific todont as the h1 -->
+
+<!-- recall: accessing array values is easy because we can use the index -->
+<!-- e.g. numArray = [1,2,3,4,5], numArray[3] => 4 -->
+<!-- accessing OBJECT values is a little tougher, you need the key associated with the value! -->
+<!-- e.g. myBuilding = {
+  area: 'Ponce',
+  numberOfFloors: 8,
+  price: 'insane'
+} -->
+<!-- to access the value of the key 'area', we would type myBuilding.area -->
+
+<h1>Description: {{todont.description}}</h1>
+
+<!-- now lets put the other value, 'urgent' -->
+<!-- recall: 'urgent' is a key of the object we're passing in, 'todont' -->
+<!-- by calling obj.key (where obj = todont, key = urgent) we get the VALUE is associated by using the key -->
+
+<h1>Urgent: {{todont.urgent}}</h1>

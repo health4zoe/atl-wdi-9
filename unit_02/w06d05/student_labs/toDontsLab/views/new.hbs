@@ -1,0 +1,16 @@
+<!-- action=... this has to be the same as the path in which we're using our .post method! -->
+<!-- on the controller page, we put the route as '/new', which is actually, '/todonts/new' (because it's routed) -->
+
+<form action="/todonts/new" method="POST">
+  <!-- label is the text field where people will enter stuff -->
+  <!-- input is how we send the data INSIDE the label -->
+  <!-- The label's for="" must match name="" in the input -->
+  <label for="description">Description: </label>
+  <input type="text" name="description">
+
+  <label for="urgent">Urgent: </label>
+  <input type="text" name="urgent">
+
+  <!-- button type HAS to be submit, so that it actually runs the post route -->
+  <button type="submit" name="button" value="Add a new Todont">Submit</button>
+</form>

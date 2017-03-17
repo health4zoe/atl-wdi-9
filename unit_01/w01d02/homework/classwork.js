@@ -8,7 +8,7 @@
 // For each expression below, indicate whether it is 'truthy' or 'falsey'
 // by assigning the appropriate variable a value of either `true` or `false`.
 
-// 1. true || false 
+// 1. true || false
 //var resOne = true;
 var resOne;
 
@@ -57,17 +57,38 @@ resSeven+=12
 {
   console.log(resSeven)
 }
+// Replit solution
+var resSeven = 165;
+while (resSeven > 105 || resSeven < 95) {
+  if (resSeven > 105) {
+    resSeven -+ 7;
+    console.log("if statement: " + resSeven);
+  }
 
+  else if (resSeven <95) { could also be 'else'
+  resSeven += 12;
+  console.log("else if statement") " + resSeven");
+  }
+}
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
 var resEight;
+resEight = 0;
+for (var i = 0; i <= 1857; i++) { // or i< 1857
+  resEight += i;
+  // console.log('Completed')
+  }
+
 // Replace This Comment With Your Code
 
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
+for (resNine i = 0 + 7; i < 1000; i*=) {
+  console.log ('');
+}
 // Replace This Comment With Your Code
 
 // 10. Using whatever code you like, calculate n^n for each value from n from 1
