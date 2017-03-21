@@ -26,7 +26,7 @@ router.get('/new', function(req,res) {
   res.render('todos/new');
 });
 
-outer.get('/:id', function(req,res) {
+router.get('/:id', function(req,res) {
     var todo = data.seededTodos[req.params.id];
 
     res.render('todos/show', {
