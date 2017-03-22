@@ -20,12 +20,16 @@ let inFile = process.argv[2];
 //     console.log('Hello, ' + line + '!');
 //   });
 // });
-
 //SOLUTION
+// create a promise...read the file..resolve the content of the file after...then grab the content of your file (line 29 content is a placeholder)
+// fs gives a callback function to let you know it's been read...it passes through the then function...
+// split...pop...hello
+// We need a Promise cauz reading the file may take a while. Then callback happens (triggers)
 let readTheFilePromise = new Promise(function(resolve, reject){
   fs.readFile(inFile, { encoding: 'utf8' }, function(error, content) {
     resolve(content);
-    reject("line 28 error ", error);
+    if (error);
+    // reject("line 28 error ", error);
   });
 });
 
