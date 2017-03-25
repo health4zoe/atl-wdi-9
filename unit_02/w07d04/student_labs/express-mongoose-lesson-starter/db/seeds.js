@@ -48,11 +48,11 @@ var item2 = new Item({name: "Go teach some node with no pants on", in_progress: 
 var item3 = new Item({name: "Go to the store", in_progress: true});
 
 
-// create two arrays that we can iterate over
+// create two project ideas arrays that we can iterate over
 var users = [gerry, marc, diesel];
 var projectIdeas = [projectIdea1, projectIdea2, projectIdea3];
 var items = [item1, item2, item3];
-
+// save to the database
 projectIdeas.forEach(function(projectIdea, i){
   projectIdea.save(function(err) {
     if(err) { console.log(err); }

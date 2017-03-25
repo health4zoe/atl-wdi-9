@@ -11,10 +11,10 @@ app.use(methodOverride('_method'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+// Bring in, require the controller code
 var usersController = require("./controllers/usersController.js");
 app.use('/users', usersController);
-
+// userId important connected
 var projectIdeasController = require("./controllers/projectIdeasController.js");
 app.use('/users/:userId/project-ideas', projectIdeasController);
 

@@ -29,7 +29,7 @@ function loginUser(req, res, next) {
 
 function authorize(req, res, next) {
   var currentUser = req.session.currentUser
-
+// Everything is good move on to the Next...
   if (!currentUser || currentUser._id !== req.params.id ) {
     res.send({status: 401})
   } else {

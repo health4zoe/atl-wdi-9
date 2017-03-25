@@ -1,9 +1,15 @@
 <ul>
   {{#each users}}
-    <li><a href="/users/{{this.id}}">{{this.first_name}}</a></li>
-    <li>{{this.email}}</li>
-    <br/>
+  {{#each user.projectIdeas}}
+  <li><a href ="/users/{{../user.id}}/project-idea/new{{this.id}}">{{this.description}}</a></li>
+<br/>
   {{/each}}
+  <a href="/{{user.id}}">New Idea</a>
 </ul>
 
-<a href="/users/new">Add New User</a>
+
+
+
+
+<!-- <li><a href="/users/{{this.id}}">{{this.first_name}}</a></li>
+<li>{{this.email}}</li> -->

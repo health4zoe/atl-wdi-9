@@ -43,11 +43,12 @@ UserSchema.pre('save', function(next){
   next();
 });
 
-
+// .model a way to connect to your database, model instances
 var UserModel = mongoose.model("User", UserSchema);
 var ItemModel = mongoose.model("Item", ItemSchema);
 var ProjectIdeaModel = mongoose.model("ProjectIdea", ProjectIdeaSchema);
-
+// export and separate the models on project.ideas.js
+// Split them out into different models
 module.exports = {
   User: UserModel,
   Item: ItemModel,

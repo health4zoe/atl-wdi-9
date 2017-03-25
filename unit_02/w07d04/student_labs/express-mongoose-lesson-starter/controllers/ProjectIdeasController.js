@@ -1,3 +1,4 @@
+// Gives access to UserId mergeParams
 var express = require('express');
 var router = express.Router({mergeParams: true});
 
@@ -5,7 +6,7 @@ var User = require("../models/user");
 var Item = require("../models/item");
 var ProjectIdea = require("../models/project_idea");
 
-// PROJECT IDEA INDEX ROUTE
+// PROJECT idea INDEX ROUTE find the user based on...
 router.get('/', function indexProjectIdea(req, res){
   User.findById(req.params.userId)
     .exec(function(err, user){
