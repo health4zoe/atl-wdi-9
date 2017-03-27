@@ -6,12 +6,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// var authors = require('.routes/authors');
 var session = require('express-session');
 var methodOverride = require('method-override');
+// var db = require('.db');
+var hbs =('hbs');
 mongoose.connect('mongodb://localhost/project-2');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+// var index = require('./routes/index');
+var index = require('./controllers/index.js');
+// var users = require('./routes/users');
+var users = require('./controllers/users.js');
 
 var app = express();
 
@@ -35,6 +40,8 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 
+// app.use('/authors', authors);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -52,5 +59,13 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.get("/:name", function(req, res){
+  console.log(req.params);
+  res.send(`Hello, ${req.params.name}!`);
+});
+// app.listen(3000, function() {
+//   console.log('hey');
+// });
 
 module.exports = app;
