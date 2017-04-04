@@ -23,6 +23,7 @@ ProjectIdea.remove({}, function(err){
 
 
 // create new users
+<<<<<<< HEAD
 var gerry = new User({
   first_name: 'Gerry',
   email: 'gerry@gmail.com'
@@ -31,10 +32,23 @@ var gerry = new User({
 var marc = new User({
   first_name: 'marc',
   email: 'marc@gmail.com'
+=======
+var danny = new User({
+  first_name: 'Danny',
+  email: 'danny@gmail.com',
+  items: [{name: "Bike maintenance"}]
+});
+
+var maren = new User({
+  first_name: 'Maren',
+  email: 'maren@gmail.com',
+  items: [{name: "Get dry cleaning"}]
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
 });
 
 var diesel = new User({
   first_name: 'diesel',
+<<<<<<< HEAD
   email: 'diesel@gmail.com'
 });
 
@@ -79,6 +93,29 @@ users.forEach(function(user, i){
 
     console.log(user);
   });
+=======
+  email: 'diesel@gmail.com',
+  items: [{name: "Go to the dog park"}]
+});
+
+// save the users
+danny.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('User created!');
+});
+
+maren.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('User created!');
+});
+
+diesel.save(function(err) {
+  if (err) console.log(err);
+  
+  console.log('User created!');
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
 });
 
 

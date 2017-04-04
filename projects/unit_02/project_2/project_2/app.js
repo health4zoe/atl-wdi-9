@@ -13,12 +13,16 @@ var methodOverride = require('method-override');
 var hbs =('hbs');
 mongoose.connect('mongodb://localhost/project-2');
 
+var client = require('./controllers/client.js');
 // var index = require('./routes/index');
 var index = require('./controllers/index.js');
 // var users = require('./routes/users');
-var users = require('./controllers/users.js');
-
+// var users = require('./controllers/users.js');
+// added
+var coaches = require('./controllers/coaches.js');
 var app = express();
+
+var seeds = require('./db/seeds');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,13 +40,16 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-
+// no route for /
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
 
-// app.use('/authors', authors);
-
+// app.use('/authors', authors);added
+app.use('/coaches', coaches);
+// If type in client, goes to client controller
+app.use('/coaches/:id/clients', client);
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
@@ -54,7 +61,8 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+// use methodOverride
+app.use(methodOverride('_method'));
   // render the error page
   res.status(err.status || 500);
   res.render('error');

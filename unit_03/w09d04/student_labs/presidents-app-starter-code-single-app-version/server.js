@@ -4,13 +4,16 @@ var cors = require('cors');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var app = express();
-
+// Connect to DB
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/presidents-app');
 
-var routes = require('./config/routes');
+var presidentsController = require("./controllers/presidents.js");
+app.use('/presidents', presidentsController);
 
+// Set up engine stuff and middleware
+// Defining what views to use and what templating engine if we need it
 app.use(cors());
 
 app.use(logger('dev'));
@@ -18,7 +21,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-
-app.use(routes);
 
 app.listen(3000);

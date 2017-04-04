@@ -8,41 +8,42 @@
 // For each expression below, indicate whether it is 'truthy' or 'falsey'
 // by assigning the appropriate variable a value of either `true` or `false`.
 
+<<<<<<< HEAD
 // 1. true || false
 //var resOne = true;
+=======
+// 1. true || false 
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
 var resOne;
+// Replace This Comment With Your Code
 
 // 2. null || ''
-//var resTwo = falsey;
 var resTwo;
+// Replace This Comment With Your Code
 
 // 3. 'false' && true
-//var resThree = true;
 var resThree;
+// Replace This Comment With Your Code
 
 // 4. !!0
-//var resFour = false;
 var resFour;
+// Replace This Comment With Your Code
 
 // 5. !null && !undefined
-//var resFive = true;
 var resFive;
+// Replace This Comment With Your Code
 
 /// Flow Control ///
 
 // 6. Write a `while` loop that increases `resSix` by 23 until `resSix` is five
 //    digits long. (Hint: take a look at the .toString() method)
-var resSix = 5;
-console.log(resSix.toString().length);
-
-while (resSix.toString().length < 5){
-  resSix+=23;
-}
-console.log(resSix)
+var resSix;
+// Replace This Comment With Your Code
 
 // 7. Write a `while` loop that increases `resSeven` by 12 when it's strictly
 //    below 95, decreases it by 7 when it's strictly above 105, and stops as
 //    soon as `resSeven` equals or falls between those two values.
+<<<<<<< HEAD
 var resSeven = 65;
 
 do {
@@ -64,6 +65,10 @@ while (resSeven > 105 || resSeven < 95) {
     resSeven -+ 7;
     console.log("if statement: " + resSeven);
   }
+=======
+var resSeven;
+// Replace This Comment With Your Code
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
 
   else if (resSeven <95) { could also be 'else'
   resSeven += 12;
@@ -91,8 +96,7 @@ for (resNine i = 0 + 7; i < 1000; i*=) {
 }
 // Replace This Comment With Your Code
 
-// 10. Using whatever code you like, calculate n^n for each value from n from 1
-//     to 10 (both inclusive), and store the sum in the variable `resTen`.
+// 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.
 var resTen;
 // Replace This Comment With Your Code
 
