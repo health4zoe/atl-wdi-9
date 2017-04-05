@@ -1,9 +1,9 @@
 angular.module('InfamousCriminals')
 .controller('CriminalsController', CriminalsController);
 
-CriminalsController.$inject = ['$http'];
+CriminalsController.$inject = ['CriminalService'];
 
-function CriminalsController($http){
+function CriminalsController(CriminalService){
   var self = this;
   self.all = [];
   self.addCriminal = addCriminal;
@@ -11,29 +11,31 @@ function CriminalsController($http){
   self.getCriminals = getCriminals;
   self.deleteCriminal = deleteCriminal;
 
-  getCriminals();
+  self.getCriminals();
   function getCriminals(){
-    $http
-      .get('/criminals')
-      .then(function(response){
-        self.all = response.data.criminals;
+     CriminalsService.getCriminals().then(function
+  (criminalsData) {
+      // .then(function(response)
+        self.all = criminalsData;
     });
   }
   function addCriminal(){
-    $http
-      .post('/criminals', self.newCriminal)
-      .then(function(response){
-        getCriminals();
-    });
+
+  CriminalsService.addCriminal(self.newCriminal).then(function(){
+      // .post('/criminals', self.newCriminal)
+      // .then(function(response){
+      //   getCriminals();
+    self.getCriminals();
     self.newCriminal = {};
+  });
   }
   function deleteCriminal(criminal){
-    $http
-      .delete("/criminals/" + criminal._id)
+  CriminalsService.deleteCriminal(criminal)
+      // .delete("/criminals/" + criminal._id)
       .then(function(response){
         var index = self.all.indexOf(criminal);
         self.all.splice(index, 1);
       });
   }
-  
+
   }
