@@ -14,9 +14,9 @@ function CriminalsController(CriminalsService) {
 	function activate() {
 		loadAllCriminals();
 	}
-	
 
-	// HOW IT DOES STUFF
+
+	// HOW IT DOES STUFF when it gets returned goes to responsedata
 	function loadAllCriminals() {
 		CriminalsService
 			.loadAll()
