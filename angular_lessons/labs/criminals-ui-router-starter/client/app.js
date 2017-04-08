@@ -28,7 +28,10 @@ uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
   .state('criminalsShow', {
   url: '/criminals/:criminalId',
 template: '<criminal-show></criminal-show>'
-});
-
+})
+// .state('criminalsNew', {
+// url: '/criminals/new:criminal',
+// template: '<criminals-new></criminals-new>')
+// };
   $urlRouterProvider.otherwise('/');
 }
