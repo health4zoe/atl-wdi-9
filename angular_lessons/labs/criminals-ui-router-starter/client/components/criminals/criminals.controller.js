@@ -14,6 +14,10 @@ function CriminalsController(CriminalsService) {
 	function activate() {
 		loadAllCriminals();
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 203a9eef1f30cd471464002baf3e3139f87d4dee
 
 
 	// HOW IT DOES STUFF when it gets returned goes to responsedata
@@ -21,7 +25,8 @@ function CriminalsController(CriminalsService) {
 		CriminalsService
 			.loadAll()
 			.then(function resolve(response) {
-				vm.criminals = response.data.criminals;
+				console.log(response)
+				vm.criminals = response.data.criminals; // array of criminals
 				vm.loading = false;
 			});
 	}

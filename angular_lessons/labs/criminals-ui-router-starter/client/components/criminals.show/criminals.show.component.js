@@ -7,5 +7,10 @@ const component = {
 };
 
 angular
+<<<<<<< HEAD
 .module('criminals')
 .component('criminalShow', component);
+=======
+  .module('criminals')
+  .component('criminalsShow', component);
+>>>>>>> 203a9eef1f30cd471464002baf3e3139f87d4dee

@@ -1,5 +1,7 @@
 const angular = require('angular');
+require('angular-ui-router');
 
+<<<<<<< HEAD
 require('angular-ui-router');
 
 angular
@@ -34,4 +36,36 @@ template: '<criminal-show></criminal-show>'
 // template: '<criminals-new></criminals-new>')
 // };
   $urlRouterProvider.otherwise('/');
+=======
+angular
+	.module('criminals', ['ui.router'])
+	.config(uiRouterSetup);
+
+uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
+function uiRouterSetup($stateProvider, $urlRouterProvider) {
+	$stateProvider
+		.state('home', {
+			url: '/',
+			template: '<home></home>'
+		})
+		.state('about', {
+			url: '/about',
+			// template: '<about></about>' // LAB Goal #1 -- get this line to work
+			template: '<h1>About</h1><a ui-sref="home">Home</a>'
+		})
+		.state('criminals', {
+			url: '/criminals',
+			template: '<criminals></criminals>'
+		})
+		.state('criminalsNew', {
+			url: '/criminals/new',
+			template: '<criminals-new></criminals-new>'
+		})
+		.state('criminalsShow', {
+			url: '/criminals/:criminalId',
+			template: '<criminals-show></criminals-show>'
+		});
+
+	$urlRouterProvider.otherwise('/');
+>>>>>>> 203a9eef1f30cd471464002baf3e3139f87d4dee
 }
